@@ -25,9 +25,8 @@ ___Example (based on my setup using DietPi and NAS)___
 
 
 ## CREDITS
-This script started from
-   <http://raspberrypi.stackexchange.com/questions/5427/can-a-raspberry-pi-be-used-to-create-a-backup-of-itself>
- which in turn started from
-   <http://www.raspberrypi.org/phpBB3/viewtopic.php?p=136912>
-Resize scripts comes from
+Backup script:
+   https://github.com/aweijnitz/pi_backup
+   
+Resize scripts:
   https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=58069
