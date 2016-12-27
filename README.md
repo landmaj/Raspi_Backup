@@ -8,7 +8,7 @@ I also added email notification after successful (or failed) backup. It requires
 - Modify the DIR variable to point to your destination
 - (optional) Modify RESIZE_LOCATION variable to point to .resizeimage.pl script
 - Update services stop and start sections to reflect your installated services
-- Make executable. ```chmod +x backup.sh```
+- Make executable. ```chmod +x raspibackup.sh```
 - Update crontab to run it each week
 
 ___Example (based on my setup using DietPi and NAS)___
