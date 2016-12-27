@@ -1,5 +1,5 @@
 # Backup script for Raspberry Pi
-This script does an image backup of the Pi SD card using dd. This is a heavily modified version of this: https://github.com/aweijnitz/pi_backup I removed an option to gzip backup image in favor of a second script (not mine, link in credits) which reduces img file to its minimum possible size. This method is faster and allows to restore backup to smaller sd card.
+This script does an image backup of the Pi SD card using dd. This is a heavily modified version of this: https://github.com/aweijnitz/pi_backup I removed the option to gzip backup image in favor of a second script (not mine, link in credits) which reduces img file to its minimum possible size. This method is faster and allows to restore backup to smaller sd card.
 
 I also added email notification after successful (or failed) backup. It requires installed and configured ssmtp.
 
