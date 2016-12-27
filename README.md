@@ -6,7 +6,7 @@ I also added email notification after successful (or failed) backup. It requires
 ## Installation
 - Clone this repo into the folder where you keep your housekeeping scripts.
 - Modify the DIR variable to point to your destination
-- (optional) Modify RESIZE_LOCATION variable to point to .resizeimage.pl script
+- (optional) Modify RESIZE_LOCATION variable to point to resizeimage.pl script
 - Update services stop and start sections to reflect your installated services
 - Make executable. ```chmod +x raspibackup.sh```
 - Update crontab to run it each week
@@ -14,11 +14,11 @@ I also added email notification after successful (or failed) backup. It requires
 ___Example (based on my setup using DietPi and NAS)___
 
 1. Create directory /mnt/backup and edit /etc/fstab to mount an NFS share to this location
-2. Copy ```.raspibackup.sh``` and ```.resizeimage.pl``` to ```/mnt/backup``` and run ```chmod +x /mnt/backup/.raspibackup.sh```
+2. Copy ```raspibackup.sh``` and ```resizeimage.pl``` to ```/mnt/backup``` and run ```chmod +x /mnt/backup/raspibackup.sh```
 3. Create ```/etc/cron.weekly/backup``` with following content:
 ```
 #!/bin/bash
-/mnt/backup/.raspibackup.sh
+/mnt/backup/raspibackup.sh
 ```
 4. Make it executable - ```chmod +x /etc/cron.weekly/backup```
 5. And see if it works ```bash /etc/cron.weekly/backup```
