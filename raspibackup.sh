@@ -143,13 +143,18 @@ function sendMail {
 # Check if mount point is mounted, if not quit!
 
 if ! mountpoint -q "$MOUNTPOINT" ; then
-    echo -e "[$(date +"%a %H:%M")]  Destination is not mounted; attempting to mount ... "
+    echo -e "[$(date +"%a %H:%M")]  Destination is not mounted; attempting to mount ... " | tee -a $DIR/backup_$HOSTNAME.log
     mountMountPoint
     if ! mountpoint -q "$MOUNTPOINT" ; then
-        echo -e "[$(date +"%a %H:%M")]   Unable to mount $MOUNTPOINT; Aborting! "
+        echo -e "[$(date +"%a %H:%M")]   Unable to mount $MOUNTPOINT; Aborting! " | tee -a $DIR/backup_$HOSTNAME.log
+	BACKUP_STATUS='FAILED'
+	if [ $MAIL_NOTIFICATION = 1 ] ;
+		then
+			sendMail
+	fi
         exit 1
     fi
-    echo -e "[$(date +"%a %H:%M")]  Mounted $MOUNTPOINT; Continuing backup"
+    echo -e "[$(date +"%a %H:%M")]  Mounted $MOUNTPOINT; Continuing backup" | tee -a $DIR/backup_$HOSTNAME.log
 fi
 
 
