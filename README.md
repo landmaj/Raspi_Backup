@@ -21,7 +21,7 @@ ___Example (based on my setup using DietPi and NAS)___
 /mnt/backup/.raspibackup.sh
 ```
 4. Make it executable - ```chmod +x /etc/cron.weekly/backup```
-5. And see if it work ```bash /etc/cron.weekly/backup```
+5. And see if it works ```bash /etc/cron.weekly/backup```
 
 
 ## CREDITS
