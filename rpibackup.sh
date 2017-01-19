@@ -25,11 +25,12 @@
 # Created new script. Some of the code is copied from the old one, most of it is new.
 # Too much changes to list
 #
+# 19-Jan-2017
+# Removed pv requirement
 #
 # ___TO DO
 #
 # Sync time after reboot
-# Remove pv from backup script
 #
 # ======================== CHANGE THESE VALUES ========================
 
@@ -252,7 +253,7 @@ case "$1" in
 	# Begin the backup process, should take about 25 minutes from 8GB SD card to NFS
 	echo -e "[$(date +"%a %H:%M")] Backing up SD card to img file on $DIR" | tee -a $DIR/backup_$HOSTNAME.log
 	SDSIZE=`sudo blockdev --getsize64 /dev/mmcblk0`;
-	sudo pv -tpreb /dev/mmcblk0 -s $SDSIZE | dd of=$OFILE bs=1M conv=sync,noerror iflag=fullblock
+	sudo dd if=/dev/mmcblk0 of=$OFILE bs=1M conv=sync,noerror iflag=fullblock
 
 	# Wait for dd backup to complete and catch result
 	BACKUP_SUCCESS=$?
